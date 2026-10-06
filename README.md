@@ -1,2 +1,19 @@
-TrustCert is an identity and information integrity platform created for the ABF 2026 Hackathon. The team consists of three members building. The project enables employers to verify Kenyan university certificates in ten seconds, supporting both paper and digital documents by combining AI document reading with blockchain verification.
-As Kenya faces significant challenges with credential fraud, public reports show around 2.6 percent of certificates in Kenya are fraudulent, including altered grades, borrowed credentials, and fake papers from non existent institutions. Existing verification methods are manual, letter based, and slow, while universities lack a cheap, tamper proof, and instant mechanism to confirm authenticity.
+# TrustCert
+Verify Kenyan university certificates in seconds: AI reads the document, blockchain proves the registry is untouched.
+ABF 2026 Hackathon, "The Trust Layer".
+
+## Structure
+| Folder | Owner | What |
+|---|---|---|
+| `/contracts` | Person A | Solidity, Hardhat, Polygon Amoy |
+| `/backend` | A (core) + B (AI/verify) | Express + TypeScript API |
+| `/frontend` | Person C | React + Vite + Tailwind |
+| `/docs` | Everyone (changes announced first) | Frozen specs, checklist, team rules |
+
+## Start here
+Read `docs/TEAM.md`, then the frozen specs: `docs/HASHING.md`, `docs/CONTRACT.md`, `docs/schema.sql`, `docs/API.md`.
+
+## Deployed
+- Contract (Amoy): _TBD_
+- Backend: _TBD_
+- Frontend: _TBD_
