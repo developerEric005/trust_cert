@@ -1,4 +1,3 @@
-// Mirrors section 8 of the shared prompt. Do not change without telling the team.
 export type Status = 'verified' | 'mismatch' | 'not_found' | 'revoked' | 'unaccredited'
 
 export interface University { id: number; name: string; accredited: boolean }
@@ -24,3 +23,7 @@ export interface CertFields {
 }
 
 export interface PhotoResponse { fields: CertFields; confidence: number }
+
+export interface LoginResponse { token: string; role: 'admin' | 'registrar'; universityId: number | null }
+
+export interface BatchResponse { batchId: number; root: string; txHash: string; count: number }

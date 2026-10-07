@@ -4,11 +4,10 @@ const must: University = { id: 1, name: 'Meru University of Science and Technolo
 const fake: University = { id: 99, name: 'Kenya Premier Global University', accredited: false }
 export const mockUniversities: University[] = [
   must, { id: 2, name: 'University of Nairobi', accredited: true }, fake,
+  { id: 100, name: 'Example Technical College', accredited: false },
 ]
 
 const base = { revoked: false, mismatchedFields: [], txHash: '0x' + 'ab'.repeat(32), anchoredAt: '2026-10-05T09:00:00Z' }
-
-// Magic serials for testing every state in mock mode
 const cases: Record<string, VerifyResponse> = {
   'MUST-001': { ...base, status: 'verified', university: must, aiRisk: { score: 0.05, notes: 'Fields are consistent and the layout looks normal. No signs of editing.' } },
   'MUST-002': { ...base, status: 'mismatch', university: must, mismatchedFields: ['class_of_award'], aiRisk: { score: 0.7, notes: 'The class of award differs from the registry. This is a common sign of an altered certificate.' } },
@@ -19,7 +18,6 @@ const notFound: VerifyResponse = { status: 'not_found', university: must, revoke
 
 export function mockVerify(serial: string, fields?: CertFields): VerifyResponse {
   const hit = cases[serial.trim().toUpperCase()] ?? notFound
-  // Photo flow demo: editing the class of a genuine record turns it into a mismatch
   if (hit.status === 'verified' && fields && fields.class_of_award.trim().toLowerCase() !== 'first class honours') {
     return { ...cases['MUST-002'], aiRisk: cases['MUST-002'].aiRisk }
   }

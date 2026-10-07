@@ -1,7 +1,4 @@
 import { useEffect, useRef } from 'react'
-
-// Slow-drifting "trust network" on Midnight Navy. Light on CPU: ~40-70 dots,
-// pauses when the tab is hidden, and stays still if the user prefers reduced motion.
 export default function AnimatedBackground() {
   const ref = useRef<HTMLCanvasElement>(null)
 
@@ -33,7 +30,7 @@ export default function AnimatedBackground() {
       g.addColorStop(0, '#040F2E'); g.addColorStop(0.6, '#061D4A'); g.addColorStop(1, '#0A2F5C')
       ctx.fillStyle = g; ctx.fillRect(0, 0, w, h)
 
-      const t = performance.now() / 1000 // slow teal glow that drifts
+      const t = performance.now() / 1000
       const gx = w * (0.3 + 0.2 * Math.sin(t / 9)), gy = h * (0.25 + 0.1 * Math.cos(t / 11))
       const rg = ctx.createRadialGradient(gx, gy, 0, gx, gy, Math.max(w, h) * 0.6)
       rg.addColorStop(0, 'rgba(10,163,154,0.22)'); rg.addColorStop(1, 'rgba(10,163,154,0)')

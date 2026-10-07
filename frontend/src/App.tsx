@@ -1,25 +1,24 @@
-import AnimatedBackground from './components/AnimatedBackground'
+import { lazy, Suspense } from 'react'
+import PublicShell from './components/PublicShell'
+import Admin from './pages/Admin'
+import Login from './pages/Login'
+import Registrar from './pages/Registrar'
 import Verify from './pages/Verify'
+import { usePath } from './router'
+
+const Scan = lazy(() => import('./pages/Scan'))
 
 export default function App() {
+  const path = usePath()
+  if (path === '/registrar') return <Registrar />
+  if (path === '/admin') return <Admin />
+
+  const m = path.match(/^\/verify\/(\d+)\/([^/]+)$/)
   return (
-    <div className="min-h-screen font-sans text-slate-900">
-      <AnimatedBackground />
-      <header className="mx-auto max-w-md px-4 pb-6 pt-10 text-white">
-        <div className="inline-block rounded-2xl bg-white/95 px-4 py-2 shadow-lg">
-          <img src="/logo.png" alt="TrustCert" className="h-12 w-auto" />
-        </div>
-        <p className="mt-3 font-display text-sm uppercase tracking-[0.2em] text-teal-300">In Cert We Trust</p>
-        <p className="mt-2 text-sm text-slate-300">Verify a Kenyan university certificate in seconds. No login.</p>
-      </header>
-      <main className="mx-auto max-w-md px-4">
-        <div className="rounded-3xl bg-white/95 p-4 shadow-2xl backdrop-blur">
-          <Verify />
-        </div>
-      </main>
-      <footer className="mx-auto max-w-md p-4 text-xs text-slate-400">
-        The blockchain proves a record was not changed after it was anchored. AI output is a risk signal, never proof.
-      </footer>
-    </div>
+    <PublicShell>
+      {path === '/login' ? <Login />
+        : path === '/scan' ? <Suspense fallback={<p className="text-slate-600">Loading camera...</p>}><Scan /></Suspense>
+        : <Verify key={path} initial={m ? { uniId: Number(m[1]), serial: decodeURIComponent(m[2]) } : undefined} />}
+    </PublicShell>
   )
 }
