@@ -48,6 +48,7 @@ export default function Registrar() {
     getUniversities()
       .then((u) => setOrgName(u.find((x) => x.id === session?.universityId)?.name ?? ''))
       .catch(() => {})
+          // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (!session || !allowed) return null
@@ -86,7 +87,7 @@ export default function Registrar() {
   const blocked = !file || uploading || !preview || 'error' in preview
 
   return (
-    <DashboardLayout title="Upload batch" orgName={orgName} nav={[['Upload batch', '#upload'], ['Revoke record', '#revoke'], ['Public verify page', '/']]}>
+    <DashboardLayout title="Upload batch" orgName={orgName} nav={[['Upload batch', '#upload'], ['Revoke record', '#revoke'], ['Certificate QR codes', '/qr'], ['Public verify page', '/']]}>
       <div className="grid items-start gap-6 lg:grid-cols-[1fr_420px]">
         <section id="upload" className="space-y-4 rounded-2xl border border-slate-200 bg-white p-6">
           <h2 className="text-xl font-bold text-navy-900">Upload a graduate batch</h2>

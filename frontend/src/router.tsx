@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useEffect, useState, type ReactNode } from 'react'
 
 export function navigate(to: string) {

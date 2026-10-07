@@ -8,7 +8,8 @@ const json = { 'Content-Type': 'application/json' }
 const bearer = (token: string) => ({ Authorization: `Bearer ${token}` })
 
 async function http<T>(path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(BASE + path, init)
+  let res: Response
+  try { res = await fetch(BASE + path, init) } catch { throw new Error('Cannot reach the server. Check your connection and try again.') }
   if (!res.ok) {
     let msg = `Request failed (${res.status}). Please try again.`
     try { const b = await res.json(); if (b.error) msg = b.error } catch { /* body is not JSON */ }
@@ -19,7 +20,9 @@ async function http<T>(path: string, init?: RequestInit): Promise<T> {
 
 export async function getUniversities(): Promise<University[]> {
   if (MOCK) { await wait(300); return mockUniversities }
-  return http('/universities')
+  const list = await http<University[] | undefined>('/universities')
+  if (!Array.isArray(list)) throw new Error('Could not load universities.')
+  return list
 }
 
 export async function verifyBySerial(uniId: number, serial: string): Promise<VerifyResponse> {

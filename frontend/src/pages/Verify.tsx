@@ -18,7 +18,7 @@ export default function Verify({ initial }: { initial?: { uniId: number; serial:
   const [fields, setFields] = useState<CertFields | null>(null)
   const [confidence, setConfidence] = useState<number | null>(null)
   const [result, setResult] = useState<VerifyResponse | null>(null)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(Boolean(initial))
   const [error, setError] = useState('')
 
   const run = async <T,>(fn: () => Promise<T>, ok: (v: T) => void) => {
@@ -30,8 +30,13 @@ export default function Verify({ initial }: { initial?: { uniId: number; serial:
     getUniversities()
       .then((u) => { setUnis(u); if (!initial && u[0]) setUniId(u[0].id) })
       .catch((e) => setError(e.message))
-    if (initial) run(() => verifyBySerial(initial.uniId, initial.serial), setResult)
-  }, [])
+    if (initial) {
+      verifyBySerial(initial.uniId, initial.serial)
+        .then(setResult)
+        .catch((e) => setError(e.message))
+        .finally(() => setLoading(false))
+  }
+}, [])
 
   const uniSelect = (
     <select className={inputClass} value={uniId} onChange={(e) => setUniId(Number(e.target.value))}>

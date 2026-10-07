@@ -15,6 +15,7 @@ export default function Admin() {
   useEffect(() => {
     if (!allowed) { navigate('/login'); return }
     getUniversities().then(setUnis).catch((e) => setError(e.message))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (!session || !allowed) return null
