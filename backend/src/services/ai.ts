@@ -245,48 +245,29 @@ function parseOcrText(text: string): ExtractedFields {
 }
 
 // ─── Provider selection and fallback chain ───────────────────────────
+// Order: Gemini (primary, free API key) → Tesseract (fallback, no key needed)
 
 export async function extractFieldsFromImage(
   imageBuffer: Buffer,
   mimeType: string
 ): Promise<ExtractionResult> {
-  const provider = (process.env.AI_PROVIDER || 'claude').toLowerCase();
   const errors: string[] = [];
 
-  // Try primary provider
-  if (provider === 'claude' && process.env.ANTHROPIC_API_KEY) {
-    try {
-      console.log('[AI] Trying Claude vision...');
-      return await extractWithClaude(imageBuffer, mimeType);
-    } catch (err: any) {
-      console.warn('[AI] Claude failed:', err.message);
-      errors.push(`Claude: ${err.message}`);
-    }
-  }
-
-  // Try Gemini (secondary)
+  // 1. Try Gemini (primary — free API key from Google AI Studio)
   if (process.env.GEMINI_API_KEY) {
     try {
-      console.log('[AI] Trying Gemini vision...');
+      console.log('[AI] Trying Gemini vision (primary)...');
       return await extractWithGemini(imageBuffer, mimeType);
     } catch (err: any) {
       console.warn('[AI] Gemini failed:', err.message);
       errors.push(`Gemini: ${err.message}`);
     }
+  } else {
+    errors.push('Gemini: GEMINI_API_KEY not set');
+    console.warn('[AI] GEMINI_API_KEY not set, skipping Gemini');
   }
 
-  // Try Claude if it wasn't primary but is available
-  if (provider !== 'claude' && process.env.ANTHROPIC_API_KEY) {
-    try {
-      console.log('[AI] Trying Claude vision (secondary)...');
-      return await extractWithClaude(imageBuffer, mimeType);
-    } catch (err: any) {
-      console.warn('[AI] Claude failed:', err.message);
-      errors.push(`Claude: ${err.message}`);
-    }
-  }
-
-  // Tesseract fallback (always available, no API key needed)
+  // 2. Tesseract fallback (always available, no API key needed)
   try {
     console.log('[AI] Falling back to Tesseract OCR...');
     return await extractWithTesseract(imageBuffer);

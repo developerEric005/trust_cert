@@ -1,0 +1,31 @@
+reg_no,student_name,programme,award,class_of_award,graduation_year,serial_no
+B131/1001/2021,Amina Wanjiku Muthoni,Bachelor of Science in Computer Science,Bachelor of Science,First Class Honours,2025,UON-CS-2025-001
+B131/1002/2021,Brian Kipchoge Korir,Bachelor of Science in Computer Science,Bachelor of Science,Second Class Upper Division,2025,UON-CS-2025-002
+B131/1003/2021,Catherine Nyambura Kamau,Bachelor of Science in Computer Science,Bachelor of Science,Second Class Upper Division,2025,UON-CS-2025-003
+B131/1004/2021,David Ochieng Otieno,Bachelor of Science in Computer Science,Bachelor of Science,Second Class Lower Division,2025,UON-CS-2025-004
+B131/1005/2021,Elizabeth Wangari Njeri,Bachelor of Science in Computer Science,Bachelor of Science,First Class Honours,2025,UON-CS-2025-005
+B132/2001/2020,Francis Mutua Kioko,Bachelor of Commerce,Bachelor of Commerce,Second Class Upper Division,2024,UON-COM-2024-001
+B132/2002/2020,Grace Akinyi Odhiambo,Bachelor of Commerce,Bachelor of Commerce,Pass,2024,UON-COM-2024-002
+B132/2003/2020,Hassan Ali Mohamed,Bachelor of Commerce,Bachelor of Commerce,Second Class Upper Division,2024,UON-COM-2024-003
+B132/2004/2020,Irene Njoki Waweru,Bachelor of Commerce,Bachelor of Commerce,First Class Honours,2024,UON-COM-2024-004
+B132/2005/2020,James Mwangi Kariuki,Bachelor of Commerce,Bachelor of Commerce,Second Class Lower Division,2024,UON-COM-2024-005
+B133/3001/2021,Khadija Fatuma Hassan,Bachelor of Laws,Bachelor of Laws,Second Class Upper Division,2025,UON-LAW-2025-001
+B133/3002/2021,Leonard Kiprop Cheruiyot,Bachelor of Laws,Bachelor of Laws,First Class Honours,2025,UON-LAW-2025-002
+B133/3003/2021,Martha Achieng Okello,Bachelor of Laws,Bachelor of Laws,Second Class Lower Division,2025,UON-LAW-2025-003
+B133/3004/2021,Nicholas Wafula Simiyu,Bachelor of Laws,Bachelor of Laws,Pass,2025,UON-LAW-2025-004
+B133/3005/2021,Olive Cherono Bett,Bachelor of Laws,Bachelor of Laws,Second Class Upper Division,2025,UON-LAW-2025-005
+B134/4001/2020,Patrick Njoroge Maina,Bachelor of Medicine and Surgery,Bachelor of Medicine,Distinction,2025,UON-MED-2025-001
+B134/4002/2020,Queen Nafula Wekesa,Bachelor of Medicine and Surgery,Bachelor of Medicine,Credit,2025,UON-MED-2025-002
+B134/4003/2020,Robert Omondi Owino,Bachelor of Medicine and Surgery,Bachelor of Medicine,Distinction,2025,UON-MED-2025-003
+B134/4004/2020,Sarah Wanjiru Githinji,Bachelor of Medicine and Surgery,Bachelor of Medicine,Pass,2025,UON-MED-2025-004
+B134/4005/2020,Thomas Kiplagat Ruto,Bachelor of Medicine and Surgery,Bachelor of Medicine,Credit,2025,UON-MED-2025-005
+B135/5001/2021,Umi Halima Abdi,Bachelor of Education,Bachelor of Education,Second Class Upper Division,2025,UON-EDU-2025-001
+B135/5002/2021,Victor Musyoka Mutinda,Bachelor of Education,Bachelor of Education,First Class Honours,2025,UON-EDU-2025-002
+B135/5003/2021,Wanjiku Mwende Mutisya,Bachelor of Education,Bachelor of Education,Second Class Lower Division,2025,UON-EDU-2025-003
+B135/5004/2021,Xavier Ogutu Nyong'o,Bachelor of Education,Bachelor of Education,Pass,2025,UON-EDU-2025-004
+B135/5005/2021,Yusuf Ibrahim Noor,Bachelor of Education,Bachelor of Education,Second Class Upper Division,2025,UON-EDU-2025-005
+B136/6001/2019,Zipporah Wambui Kinyanjui,Bachelor of Engineering in Electrical,Bachelor of Engineering,First Class Honours,2024,UON-ENG-2024-001
+B136/6002/2019,Abel Makau Ndunda,Bachelor of Engineering in Electrical,Bachelor of Engineering,Second Class Upper Division,2024,UON-ENG-2024-002
+B136/6003/2019,Beatrice Nyokabi Mwangi,Bachelor of Engineering in Electrical,Bachelor of Engineering,Second Class Lower Division,2024,UON-ENG-2024-003
+B136/6004/2019,Charles Kimani Ngugi,Bachelor of Engineering in Electrical,Bachelor of Engineering,Pass,2024,UON-ENG-2024-004
+B136/6005/2019,Diana Moraa Nyamweya,Bachelor of Engineering in Electrical,Bachelor of Engineering,First Class Honours,2024,UON-ENG-2024-005

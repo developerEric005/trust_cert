@@ -92,7 +92,7 @@ async function seed() {
         [uni.name, uni.cue_charter_ref, uni.wallet_address, uni.accredited, uni.status]
       );
     }
-    console.log(`✅ ${UNIVERSITIES.length} universities inserted`);
+    console.log(` ${UNIVERSITIES.length} universities inserted`);
 
     // 3. Insert admin user
     const adminHash = await bcrypt.hash(ADMIN_USER.password, 10);
