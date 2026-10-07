@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo Certificates</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #e0e0e0;
+      font-family: 'Times New Roman', serif;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+    }
+    .certificate {
+      background: white;
+      width: 800px;
+      height: 600px;
+      padding: 40px;
+      box-sizing: border-box;
+      border: 15px solid #2c3e50;
+      position: relative;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .inner-border {
+      border: 2px solid #e67e22;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .uni-name {
+      font-size: 32px;
+      font-weight: bold;
+      color: #2c3e50;
+      text-transform: uppercase;
+      margin-top: 20px;
+      margin-bottom: 50px;
+    }
+    .certifies {
+      font-size: 20px;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    .student-name {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      text-decoration: underline;
+    }
+    .award-text {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .award {
+      font-size: 28px;
+      font-weight: bold;
+      color: #e67e22;
+      margin-bottom: 10px;
+    }
+    .class-award {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+    .footer-info {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+      font-size: 14px;
+      font-family: sans-serif;
+    }
+    .signatures {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+    .sig-line {
+      border-top: 1px solid black;
+      width: 200px;
+      padding-top: 5px;
+    }
+    .signature-text {
+      font-family: 'Dancing Script', cursive;
+      font-size: 32px;
+      color: #000080; /* Dark blue ink */
+      margin-bottom: -15px;
+      transform: rotate(-5deg);
+    }
+    /* Specific styling for the fake certificate */
+    .cert-fake {
+      border-color: #c0392b;
+    }
+    .cert-fake .inner-border {
+      border-color: #f1c40f;
+    }
+    .cert-fake .uni-name {
+      color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. GENUINE CERTIFICATE -->
+  <div class="certificate">
+    <div class="inner-border">
+      <div class="uni-name">University of Nairobi</div>
+      <div class="certifies">This is to certify that</div>
+      <div class="student-name">Amina Wanjiku Muthoni</div>
+      <div class="award-text">having satisfied the requirements for the award of the degree of</div>
+      <div class="award">Bachelor of Science</div>
+      <div class="class-award">First Class Honours</div>
+      
+      <div class="signatures">
+        <div>
+          <div class="signature-text">S. Kiama</div>
+          <div class="sig-line">Vice Chancellor</div>
+        </div>
+        <div>
+          <div class="signature-text">J. Ogeng'o</div>
+          <div class="sig-line">Deputy Vice Chancellor (Academic)</div>
+        </div>
+      </div>
+      
+      <div class="footer-info">
+        <div>Registration No: B131/1001/2021</div>
+        <div>Graduation Year: 2025</div>
+        <div>Serial No: UON-CS-2025-001</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. GRADE EDITED CERTIFICATE (Forgery) -->
+  <div class="certificate">
+    <div class="inner-border">
+      <div class="uni-name">University of Nairobi</div>
+      <div class="certifies">This is to certify that</div>
+      <div class="student-name">Amina Wanjiku Muthoni</div>
+      <div class="award-text">having satisfied the requirements for the award of the degree of</div>
+      <div class="award">Bachelor of Science</div>
+      <!-- THIS IS THE FORGED FIELD -->
+      <div class="class-award" style="color:red; text-decoration:underline;">Second Class Upper Division</div>
+      
+      <div class="signatures">
+        <div>
+          <div class="signature-text">S. Kiama</div>
+          <div class="sig-line">Vice Chancellor</div>
+        </div>
+        <div>
+          <div class="signature-text">J. Ogeng'o</div>
+          <div class="sig-line">Deputy Vice Chancellor (Academic)</div>
+        </div>
+      </div>
+      
+      <div class="footer-info">
+        <div>Registration No: B131/1001/2021</div>
+        <div>Graduation Year: 2025</div>
+        <div>Serial No: UON-CS-2025-001</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. FAKE UNIVERSITY CERTIFICATE -->
+  <div class="certificate cert-fake">
+    <div class="inner-border">
+      <div class="uni-name">Fake Academy of Excellence</div>
+      <div class="certifies">This is to certify that</div>
+      <div class="student-name">John Doe</div>
+      <div class="award-text">has been awarded the</div>
+      <div class="award">Master of Business Administration</div>
+      <div class="class-award">Distinction</div>
+      
+      <div class="signatures">
+        <div>
+          <div class="signature-text">B. Fraud</div>
+          <div class="sig-line">President</div>
+        </div>
+        <div>
+          <div class="signature-text">I. Scam</div>
+          <div class="sig-line">Dean of Studies</div>
+        </div>
+      </div>
+      
+      <div class="footer-info">
+        <div>Registration No: FAE/2024/001</div>
+        <div>Graduation Year: 2024</div>
+        <div>Serial No: FAKE-001</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

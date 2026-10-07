@@ -9,6 +9,7 @@
     "start": "node dist/app.js",
     "seed": "tsx src/db/seed.ts",
     "test:hash": "tsx src/utils/hashTest.ts",
+    "test:ai": "tsx src/utils/testAi.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -1,0 +1,58 @@
+{
+  "bd96745b7517c89f156dfbe97e36af75d0f09565b6c465e7c7e49c82ad6b68fb": {
+    "fields": {
+      "reg_no": "B131/1001/2021",
+      "student_name": "Amina Wanjiku Muthoni",
+      "award": "Bachelor of Science",
+      "class_of_award": "Second Class Upper Division",
+      "graduation_year": "2025",
+      "serial_no": "UON-CS-2025-001",
+      "university_name": "UNIVERSITY OF NAIROBI"
+    },
+    "confidence": 0.98,
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite"
+  },
+  "729f77ac1fef18027f8651e40870f22e51d6d642fddb69178550502e58d930a3": {
+    "fields": {
+      "reg_no": "B131/1001/2021",
+      "student_name": "Amina Wanjiku Muthoni",
+      "award": "Bachelor of Science",
+      "class_of_award": "First Class Honours",
+      "graduation_year": "2025",
+      "serial_no": "",
+      "university_name": "UNIVERSITY OF NAIROBI"
+    },
+    "confidence": 0.9,
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite"
+  },
+  "f2e1ddab6e093c7749e31a2c161040f6abea3684033e207147cc0b5d6ad4dca0": {
+    "fields": {
+      "reg_no": "B131/1001/2021",
+      "student_name": "Amina Wanjiku Muthoni",
+      "award": "Bachelor of Science",
+      "class_of_award": "First Class Honours",
+      "graduation_year": "2025",
+      "serial_no": "UON-CS-2025-001",
+      "university_name": "UNIVERSITY OF NAIROBI"
+    },
+    "confidence": 0.98,
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite"
+  },
+  "5b7622cfb7fa33c709e1c6b0a3a0b191bdd96d4b1f956c168a58ef383ad1d7fc": {
+    "fields": {
+      "reg_no": "FAE/2024/001",
+      "student_name": "John Doe",
+      "award": "Master of Business Administration",
+      "class_of_award": "Distinction",
+      "graduation_year": "2024",
+      "serial_no": "FAKE-001",
+      "university_name": "FAKE ACADEMY OF EXCELLENCE"
+    },
+    "confidence": 0.99,
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite"
+  }
+}
